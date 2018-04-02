@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1Scene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2Scene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroSprite.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage3Scene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletSprite.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="HuajiSprite.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage4Scene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="BossSprite.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage5Scene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage6Scene.cpp" />
+    <ClCompile Include="PrologueScene.cpp" />
+    <ClCompile Include="CoverScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HelloWorldScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1Scene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2Scene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroSprite.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage3Scene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletSprite.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="HuajiSprite.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage4Scene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="BossSprite.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage5Scene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage6Scene.h" />
+    <ClInclude Include="PrologueScene.h" />
+    <ClInclude Include="CoverScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
