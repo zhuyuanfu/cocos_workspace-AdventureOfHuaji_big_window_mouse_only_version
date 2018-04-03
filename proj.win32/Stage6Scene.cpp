@@ -1,5 +1,5 @@
 #include "Stage6Scene.h"
-#include "Stage1Scene.h"
+#include "PrologueScene.h"
 #include "GameOverScene.h"
 #include "BossSprite.h"
 #include "HuajiSprite.h"
@@ -87,7 +87,7 @@ bool Stage6Scene::init()
 	this->addChild(epilogueLabel);
 
 	Label * skipLabel = Label::createWithTTF("Replay", "fonts/Marker Felt.ttf", 24);
-	MenuItemLabel * menuItemSkip = MenuItemLabel::create(skipLabel, CC_CALLBACK_1(Stage6Scene::goToStage1SceneCallback, this));
+	MenuItemLabel * menuItemSkip = MenuItemLabel::create(skipLabel, CC_CALLBACK_1(Stage6Scene::goToPrologueSceneCallback, this));
 	Menu * topRightMenu = Menu::create(menuItemSkip, nullptr);
 	topRightMenu->setPosition(visibleSize.width - skipLabel->getContentSize().width / 2, visibleSize.height - skipLabel->getContentSize().height / 2);
 	this->addChild(topRightMenu);
@@ -559,6 +559,6 @@ void Stage6Scene::playEpilogue(){
 
 }
 
-void Stage6Scene::goToStage1SceneCallback(Ref * pSender){
-	Director::getInstance()->replaceScene(Stage1Scene::createScene());
+void Stage6Scene::goToPrologueSceneCallback(Ref * pSender){
+	Director::getInstance()->replaceScene(PrologueScene::createScene());
 } 

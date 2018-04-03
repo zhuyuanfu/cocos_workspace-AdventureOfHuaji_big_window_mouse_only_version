@@ -50,7 +50,7 @@ public:
 
 	static cocos2d::Scene* createScene();
 
-	void goToStage1SceneCallback(Ref * pSender);
+	void goToPrologueSceneCallback(Ref * pSender);
 
 	virtual bool init();
 
