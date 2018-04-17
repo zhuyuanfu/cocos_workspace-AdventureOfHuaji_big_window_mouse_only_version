@@ -51,9 +51,15 @@
     <ClCompile Include="Stage5Scene.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Stage6Scene.cpp" />
-    <ClCompile Include="PrologueScene.cpp" />
-    <ClCompile Include="CoverScene.cpp" />
+    <ClCompile Include="CoverScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="PrologueScene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage6Scene.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -95,9 +101,15 @@
     <ClInclude Include="Stage5Scene.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Stage6Scene.h" />
-    <ClInclude Include="PrologueScene.h" />
-    <ClInclude Include="CoverScene.h" />
+    <ClInclude Include="CoverScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="PrologueScene.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage6Scene.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

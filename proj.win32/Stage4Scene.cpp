@@ -590,7 +590,9 @@ void Stage4Scene::update(float dt){
 
 	//如果滑稽高度过低，则判定坠亡
 	if (huaji->getPositionY() < 10){
-		Director::getInstance()->replaceScene(GameOverScene::createScene());
+		GameOverScene* gmScene = (GameOverScene*)GameOverScene::createScene();
+		gmScene->lastStage = 4;
+		Director::getInstance()->replaceScene(gmScene);
 	}
 
 	int bulletTagBegin = this->bullet_tag_begin;
@@ -602,7 +604,9 @@ void Stage4Scene::update(float dt){
 		int x_distance = huaji->getPositionX() - bulletSprite->getPositionX();
 		int y_distance = huaji->getPositionY() - bulletSprite->getPositionY();
 		if (sqrt(pow(x_distance, 2) + pow(y_distance, 2)) < huaji->max_bullet_hit_distance && bulletSprite->harmful_to_huaji){
-			Director::getInstance()->replaceScene(GameOverScene::createScene());
+			GameOverScene* gmScene = (GameOverScene*)GameOverScene::createScene();
+			gmScene->lastStage = 4;
+			Director::getInstance()->replaceScene(gmScene);
 		}
 	}
 

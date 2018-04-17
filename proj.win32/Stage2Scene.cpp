@@ -224,7 +224,9 @@ void Stage2Scene::update(float dt){
 
 
 	if (huaji->getPositionY() < 10){
-		Director::getInstance()->replaceScene(GameOverScene::createScene());
+		GameOverScene* gmScene = (GameOverScene* ) GameOverScene::createScene();
+		gmScene->lastStage = 2;
+		Director::getInstance()->replaceScene(gmScene);
 	}
 
 

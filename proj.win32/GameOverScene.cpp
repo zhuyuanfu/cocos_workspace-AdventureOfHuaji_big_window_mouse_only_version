@@ -79,15 +79,44 @@ bool GameOverScene::init()
 		this->addChild(label, 1);
 	}
 
-	auto retryLabel1 = Label::createWithTTF("Retry", "fonts/Marker Felt.ttf",36);
-	auto menuItemRetry = MenuItemLabel::create(retryLabel1, CC_CALLBACK_1(GameOverScene::restartGameCallBack, this));
-	auto middleMenu = Menu::create(menuItemRetry, nullptr);
+	auto retryLabel1 = Label::createWithTTF("Restart", "fonts/Marker Felt.ttf",36);
+	auto menuItemRestart = MenuItemLabel::create(retryLabel1, CC_CALLBACK_1(GameOverScene::restartGameCallBack, this));
+	menuItemRestart->setPositionY(-48);
+
+	auto retryStage = Label::createWithTTF("Retry current stage", "fonts/Marker Felt.ttf", 36);
+	auto menuItemRetryStage = MenuItemLabel::create(retryStage, CC_CALLBACK_1(GameOverScene::gotoLastStage,this));
+
+	auto middleMenu = Menu::create(menuItemRestart, menuItemRetryStage, nullptr);
 	middleMenu->setPosition(visibleSize.width / 2, visibleSize.height * 30 / 100);
 	this->addChild(middleMenu);
 
 	return true;
 }
 
+void GameOverScene::gotoLastStage(Ref* pSender){
+	Scene * stageScene;
+	switch (this->lastStage){
+	case 1:
+		stageScene = Stage1Scene::createScene();
+		break;
+	case 2:
+		stageScene = Stage2Scene::createScene();
+		break;
+	case 3:
+		stageScene = Stage3Scene::createScene();
+		break;
+	case 4:
+		stageScene = Stage4Scene::createScene();
+		break;
+	case 5:
+		stageScene = Stage5Scene::createScene();
+		break;
+	default:
+		stageScene = Stage1Scene::createScene();
+
+	}
+	Director::getInstance()->replaceScene(stageScene);
+}
 
 void GameOverScene::menuCloseCallback(Ref* pSender)
 {

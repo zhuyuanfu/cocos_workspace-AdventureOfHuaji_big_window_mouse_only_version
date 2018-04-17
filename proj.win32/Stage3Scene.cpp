@@ -138,11 +138,11 @@ bool Stage3Scene::init()
 	this->bullet_tag_end = 200;
 	//add a bullet for tests
 	BulletSprite * bulletSprite = BulletSprite::create("bullet_head_up_double.png");
-	bulletSprite->setPosition(visibleSize.width + 100, visibleSize.height * 20 / 100);
+	bulletSprite->setPosition(visibleSize.width + 100, visibleSize.height * 28 / 100);
 	bulletSprite->setTag(200);
 	bulletSprite->setRotation(-90);
 	bulletSprite->launch_position_x = visibleSize.width + 100;
-	bulletSprite->launch_position_y = visibleSize.height * 20 / 100;
+	bulletSprite->launch_position_y = visibleSize.height * 28 / 100;
 	this->addChild(bulletSprite);
 
 	//白色箭头，仅子弹时间内可见，位于滑稽和踩住的子弹之间，指示滑稽弹射位置
@@ -530,7 +530,9 @@ void Stage3Scene::update(float dt){
 
 	//如果滑稽高度过低，则判定坠亡
 	if (huaji->getPositionY() < 10){
-		Director::getInstance()->replaceScene(GameOverScene::createScene());
+		GameOverScene* gmScene = (GameOverScene*)GameOverScene::createScene();
+		gmScene->lastStage = 3;
+		Director::getInstance()->replaceScene(gmScene);
 	}
 
 	int bulletTagBegin = this->bullet_tag_begin;
@@ -542,7 +544,9 @@ void Stage3Scene::update(float dt){
 		int x_distance = huaji->getPositionX() - bulletSprite->getPositionX();
 		int y_distance = huaji->getPositionY() - bulletSprite->getPositionY();
 		if (sqrt(pow(x_distance, 2) + pow(y_distance, 2)) < huaji->max_bullet_hit_distance && bulletSprite->harmful_to_huaji){
-			Director::getInstance()->replaceScene(GameOverScene::createScene());
+			GameOverScene* gmScene = (GameOverScene*)GameOverScene::createScene();
+			gmScene->lastStage = 3;
+			Director::getInstance()->replaceScene(gmScene);
 		}
 	}
 	/*
